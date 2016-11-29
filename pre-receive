@@ -59,11 +59,11 @@ git archive "$newrev" | tar x -C "$tmptree"
 
   files_list=''
   if [[ "x$oldrev" == 'x' ]]; then
-    if [[ $CHECK_INITIAL_COMMIT != "disabled" ]] ; then
+#    if [[ $CHECK_INITIAL_COMMIT != "disabled" ]] ; then
       files_list=$(git ls-tree --full-tree -r HEAD --name-only)
-    else
-      echo "Skipping file checks this is the initial commit..."
-    fi
+#    else
+#      echo "Skipping file checks this is the initial commit..."
+#    fi
   else
     files_list=$(git diff --name-only "$oldrev" "$newrev" --diff-filter=ACM)
   fi
