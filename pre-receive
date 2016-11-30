@@ -48,6 +48,7 @@ case $(puppet --version) in
   4*) USE_PUPPET_FUTURE_PARSER="disabled" ;;
 esac
 
+cd puppet-control
 oldrev=$(git rev-parse HEAD~1)
 newrev=$(git rev-parse HEAD)
 git archive "$newrev" | tar x -C "$tmptree"
